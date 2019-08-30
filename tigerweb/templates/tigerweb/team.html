@@ -1,0 +1,54 @@
+{% extends "tigerweb/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="row no-gutters">
+        <div class="col">
+            <div style="width: 100vw; height: 50vh;" class="d-flex justify-content-center">
+                <section class="position-absolute align-self-center" style="z-index: 1000;" id="hero">
+                    <div class="d-inline-block align-middle">
+                        <h2 class="hero_header">
+                            <span class="light">THE TEAM</span>
+                        </h2>
+                    </div>
+                </section>
+                <img class="w-100 h-100 carousel-img" src="{% static "tigerweb/images/team/stadium3.jpg" %}"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center no-gutters px-5">
+        <div class="col-md-auto" style="margin-top: -25px">
+            <div class="card shadow px-5">
+                <div class="card-body">
+                    <h1 class="text-center m-0">Fall 2019</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-5 px-3 justify-content-center no-gutters">
+        {% if players|length == 0 %}
+            <div class="col">
+                <h3 class="text-center text-muted">No players this season. </h3>
+            </div>
+        {% endif %}
+        {% for player in players %}
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="card shadow-sm h-100">
+                    <div class="row no-gutters h-100">
+                        <div class="col-xl-4">
+                            <img src="{{ player.image_url }}" class="w-100 h-100 carousel-img"/>
+                        </div>
+                        <div class="col-xl-8">
+                            <div class="card-body">
+                                <h4 class="card-title">{{ player.name | upper }}</h4>
+                                <p class="card-subtitle text-muted">{{ player.position | upper }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

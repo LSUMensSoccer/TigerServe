@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{% block title %}LSU Men's Soccer{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          crossorigin="anonymous"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
+
+    <link rel="stylesheet" href="{% static "tigerweb/css/site.css" %}"/>
+    <link rel="stylesheet" href="https://use.typekit.net/kga5ero.css">
+</head>
+<body>
+<header>
+    <nav class="navbar fixed-top navbar-expand-md navbar-toggleable-md navbar-dark box-shadow" style="max-width: 100vw">
+        <div class="container">
+            <a class="navbar-brand m-0" style="max-width: 75%" {% url 'index' %}>
+                <img src="{% static "tigerweb/images/logos/webBanner-Dark.svg" %}" style="width: 100%" class="d-inline-block align-top float-left" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-md-inline-flex flex-md-row-reverse ">
+                <ul class="navbar-nav flex-grow-1 font-weight-bold justify-content-end" style="border-bottom: 1px solid gold; font-size: 1em">
+                    <li class="nav-item m-2">
+                        <a class="nav-link text-center" href="{% url 'index' %}">HOME</a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link text-center" href="{% url 'about' %}">ABOUT</a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link text-center" href="{% url 'team' %}">TEAM</a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link text-center" href="{% url 'index' %}">CONTACT</a>
+                    </li>
+                    <li class="nav-item m-2" style="background-color: gold; color: black;">
+                        <a class="nav-link text-center text-dark" href="{% url 'index' %}">SUPPORT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="container-fluid p-0">
+    <main role="main" class="pb-0">
+        {% block body %}Must override `body` block{% endblock %}
+    </main>
+</div>
+
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2019 - LSU Men's Soccer
+    </div>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+        crossorigin="anonymous"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"
+        integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+</script>
+
+{% block scripts %}{% endblock %}
+</body>
+</html>
