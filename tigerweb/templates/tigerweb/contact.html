@@ -1,0 +1,51 @@
+{% extends "tigerweb/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="row no-gutters">
+        <div class="col">
+            <div style="width: 100vw; height: 50vh;" class="d-flex justify-content-center">
+                <section class="position-absolute align-self-center" style="z-index: 1000;" id="hero">
+                    <div class="d-inline-block align-middle">
+                        <h2 class="hero_header">
+                            <span class="light">CONTACTS</span>
+                        </h2>
+                    </div>
+                </section>
+                <img class="w-100 h-100 carousel-img" src="{% static "tigerweb/images/team/DSC_8770.jpg" %}"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center no-gutters px-5">
+        <div class="col-md-auto" style="margin-top: -25px">
+            <div class="card shadow px-5">
+                <div class="card-body">
+                    <h1 class="text-center m-0">Drop Us A Line!</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row no-gutters mt-5">
+        <div class="col-md-6 border-right pr-5 text-md-right">
+            <h5>EMAIL</h5>
+            <p><a href="mailto:menssoccerclub@lsu.edu" target="_blank">menssoccerclub@lsu.edu</a></p>
+            <h5>ADDRESS</h5>
+            <p>102 Student Rec Complex<br>Baton Rouge, Louisiana 70803</p>
+        </div>
+        <div class="col-md-6 pl-5 text-left" style="line-height: 2em;">
+            <a href="https://twitter.com/LSUMensSoccer" style="text-decoration: none">
+                <i class="fab fa-twitter-square fa-5x"></i>
+            </a>
+            <br>
+            <a href="https://www.instagram.com/lsumenssoccer/">
+                <i class="fab fa-instagram fa-5x"></i>
+            </a>
+            <br>
+            <a href="https://www.facebook.com/LSUMensSoccer/">
+                <i class="fab fa-facebook-square fa-5x"></i>
+            </a>
+        </div>
+    </div>
+{% endblock %}

@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block body %}
-    <div class="row">
+    <div class="row no-gutters">
         <div class="col">
             <div style="width: 100vw; height: 50vh;" class="d-flex justify-content-center">
                 <section class="position-absolute align-self-center" style="z-index: 1000;" id="hero">
@@ -17,51 +17,55 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col px-5" style="margin-top: -25px">
+    <div class="row no-gutters">
+        <div class="col-md-auto px-5" style="margin-top: -25px">
             <div class="card shadow">
                 <div class="card-body">
                     <h2 class="text-center my-3">The Face of Men's Soccer at LSU</h2>
-                    <p>The Louisiana State University Men’s Soccer Club is a platform for LSU students who have previously competed at the highest levels of
-                        soccer and are looking to continue that high level of competition in college. As LSU does not have a Men’s Varsity Soccer Team, the LSU
-                        Club team serves as the highest level of soccer competition for LSU.</p>
-                    <p>The club team competes in the Collegiate Soccer League of Louisiana, traveling around the state to compete against its top programs. Most
-                        years the season extends to the NIRSA Region IV South Tournament and NIRSA National Championships. The club is an opportunity to not
-                        only continue playing at the highest level available to male LSU students but to become part of a brotherhood of fellow students who
-                        love the game as well. </p>
+                    <div class="card-text text-center" style="columns: 24em; column-rule: 1px solid #c0c0c0; column-gap: 2.5em;">
+                        <p>The Louisiana State University Men’s Soccer Club is a platform for LSU students who have previously competed at the highest levels of
+                            soccer and are looking to continue that high level of competition in college. As LSU does not have a Men’s Varsity Soccer Team, the
+                            LSU
+                            Club team serves as the highest level of soccer competition for LSU.</p>
+                        <p>The club team competes in the Collegiate Soccer League of Louisiana, traveling around the state to compete against its top programs.
+                            Most
+                            years the season extends to the NIRSA Region IV South Tournament and NIRSA National Championships. The club is an opportunity to not
+                            only continue playing at the highest level available to male LSU students but to become part of a brotherhood of fellow students who
+                            love the game as well. </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="row no-gutters my-5">
-        <div class="col">
-            <div class="border-right text-center">
+        <div class="col-md-4">
+            <div class="border-right text-center px-3">
                 <h3 class="font-weight-bold">5</h3>
                 <p class="text-muted">National Championship Appearances</p>
             </div>
         </div>
-        <div class="col no-gutters">
-            <div class="text-center">
+        <div class="col-md-4 no-gutters">
+            <div class="text-center px-3">
                 <h3 class="font-weight-bold">1964</h3>
                 <p class="text-muted">Established</p>
             </div>
         </div>
-        <div class="col no-gutters">
-            <div class="border-left text-center">
+        <div class="col-md-4 no-gutters">
+            <div class="border-left text-center px-3">
                 <h3 class="font-weight-bold">4</h3>
                 <p class="text-muted">State Championships</p>
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row no-gutters">
         <div class="col text-center">
             <h2>Club Officers</h2>
         </div>
     </div>
 
-    <div class="row justify-content-center px-5 pb-5">
+    <div class="row no-gutters justify-content-center px-5 pb-5">
         {% for officer in officers %}
             <div class="col-md-4 col-sm-6 p-3">
                 <div class="card shadow-sm h-100">

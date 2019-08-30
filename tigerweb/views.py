@@ -15,3 +15,7 @@ def about(request):
 
 def team(request):
     return render(request, 'tigerweb/team.html', {'players': Player.objects.all()})
+
+
+def contact(request):
+    return render(request, 'tigerweb/contact.html')
