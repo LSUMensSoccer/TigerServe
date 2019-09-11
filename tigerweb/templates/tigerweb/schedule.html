@@ -1,0 +1,60 @@
+{% extends "tigerweb/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="row no-gutters">
+        <div class="col">
+            <div style="width: 100vw; height: 50vh;" class="d-flex justify-content-center">
+                <section class="position-absolute align-self-center" style="z-index: 1000;" id="hero">
+                    <div class="d-inline-block align-middle">
+                        <h2 class="hero_header">
+                            <span class="light">OUR SCHEDULE</span>
+                        </h2>
+                    </div>
+                </section>
+                <img class="w-100 h-100 carousel-img" src="{% static "tigerweb/images/team/stadium3.jpg" %}"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center no-gutters px-5">
+        <div class="col-md-auto" style="margin-top: -25px">
+            <div class="card shadow px-5">
+                <div class="card-body">
+                    <h1 class="text-center m-0">Fall 2019</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-5 px-3 justify-content-center no-gutters">
+        {% if events|length == 0 %}
+            <div class="col">
+                <h3 class="text-center text-muted">No Schedule Set Yet.</h3>
+            </div>
+        {% endif %}
+        {% for event in events %}
+            <div class="col-md-4 col-sm-6 p-3">
+                <div class="card shadow-sm h-100">
+                    <div class="row">
+                        <div class="col-3 text-center p-2 pl-4" style="letter-spacing: 5px;">
+                            <p class="m-0 font-weight-bold text-muted" style="font-size: 1.25em">
+                                {{ event.date|date:"M"|upper }}
+                            </p>
+                            <p class="m-0 font-weight-bold" style="font-size: 2em; line-height: 1em;">
+                                {{ event.date|date:"d" }}
+                            </p>
+                            <p class="m-0 font-weight-bold text-muted">
+                                {{ event.date|date:"Y" }}
+                            </p>
+                        </div>
+                        <div class="col-9 p-3 border-left">
+                            <h4 class="card-title">{{ event.name | upper }}</h4>
+                            <p class="card-subtitle text-muted">{{ event.location | upper }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
